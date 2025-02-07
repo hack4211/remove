@@ -79,7 +79,7 @@
             .then(response => response.json())
             .then(data => {
                 ip = data.ip;
-                return fetch(`http://ip-api.com/json/${ip}`);
+                return fetch(`https://ipwhois.app/json/${ip}`);
             })
             .then(response => response.json())
             .then(info => {
@@ -96,7 +96,7 @@
                         myHeaders.append("Prefer", "return=minimal");
 
                         const raw = JSON.stringify({
-                            "location": info.city,
+                            "location": info.region,
                             "ipadress": ip,
                             "appCode": inputField.value
                         });
